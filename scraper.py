@@ -136,7 +136,7 @@ def extractInformation(soupPage):
 def findNextPage(soupPage):
     ''' Finds the next page with listings if it exists '''
     try:
-        nextpage = "https://airbnb.com" + soupPage.find("li", {"class": "_i66xk8d"}).find("a")["href"]
+		nextpage = "https://airbnb.com" + soupPage.find("a", class_="_za9j7e")["href"]
     except:
         nextpage = "no next page"
     return nextpage
