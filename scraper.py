@@ -10,33 +10,7 @@ to create the blogpost on webscraping Airbnb data.
 """
     URLs
 """
-newyork = "https://www.airbnb.com/s/Manhattan--New-York-City--New-York--Verenigde-Staten/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&place_id=ChIJYeZuBI9YwokRjMDs_IEyCwo&source=structured_search_input_header&search_type=search_query&query=Manhattan%2C%20New%20York%20City%2C%20New%20York&checkin=2020-08-01&checkout=2020-08-08&adults=1&locale=en&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4"
-tokyo = "https://www.airbnb.com/s/Tokyo--Japan/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&place_id=ChIJ51cu8IcbXWARiRtXIothAS4&source=structured_search_input_header&search_type=search_query&query=Tokyo%2C%20Japan&checkin=2020-08-01&checkout=2020-08-08&adults=1&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4&locale=en#simple-header-locale-menu"
-beijing = "https://www.airbnb.com/s/Beijing/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&source=structured_search_input_header&search_type=search_query&query=Beijing&checkin=2020-08-01&checkout=2020-08-08&adults=1&place_id=ChIJuSwU55ZS8DURiqkPryBWYrk&locale=en&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4"
-seoul = "https://www.airbnb.com/s/Seoul--Zuid~Korea/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&source=structured_search_input_header&search_type=search_query&place_id=ChIJzWXFYYuifDUR64Pq5LTtioU&query=Seoul%2C%20Zuid-Korea&checkin=2020-08-01&checkout=2020-08-08&adults=1&locale=en&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4"
-bangkok = "https://www.airbnb.com/s/Bangkok-Thailand/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&source=structured_search_input_header&search_type=search_query&place_id=ChIJ82ENKDJgHTERIEjiXbIAAQE&query=Bangkok%20Thailand&checkin=2020-08-01&checkout=2020-08-08&adults=1&locale=en&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4"
-sydney = "https://www.airbnb.com/s/Bangkok-Thailand/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&source=structured_search_input_header&search_type=unknown&query=Sydney%2C%20Australi%C3%AB&checkin=2020-08-01&checkout=2020-08-08&adults=1&ne_lat=-33.66505922291055&ne_lng=151.45134722098783&sw_lat=-33.990418421589574&sw_lng=151.05638871651217&zoom=11&search_by_map=true&locale=en&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4"
-manila = "https://www.airbnb.be/s/Manila--Philippines/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&source=structured_search_input_header&search_type=search_query&query=Manila%2C%20Philippines&checkin=2020-08-01&checkout=2020-08-08&adults=1&place_id=ChIJbTgmYNLIlzMR0HiSrNoj7V8"
-auckland = "https://www.airbnb.com/s/Auckland--Nieuw~Zeeland/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&source=structured_search_input_header&search_type=search_query&place_id=ChIJ--acWvtHDW0RF5miQ2HvAAU&query=Auckland%2C%20Nieuw-Zeeland&checkin=2020-08-01&checkout=2020-08-08&adults=1&locale=en&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4"
-kinshasa = "https://www.airbnb.com/s/Kinshasa--R%C3%A9publique-d%C3%A9mocratique-du-Congo/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&source=structured_search_input_header&search_type=search_query&place_id=ChIJf0gENADeahoR1CwcRLB63vU&query=Kinshasa%2C%20R%C3%A9publique%20d%C3%A9mocratique%20du%20Congo&checkin=2020-08-01&checkout=2020-08-08&adults=1&locale=en&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4"
-cape_town = "https://www.airbnb.com/s/Cape-Town--West~Kaap--Zuid~Afrika/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&source=structured_search_input_header&search_type=search_query&place_id=ChIJ1-4miA9QzB0Rh6ooKPzhf2g&query=Cape%20Town%2C%20West-Kaap&checkin=2020-08-01&checkout=2020-08-08&adults=1&locale=en&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4"
-cairo = "https://www.airbnb.com/s/Cairo--Egypt/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&source=structured_search_input_header&search_type=search_query&place_id=ChIJz6gXkZ0QWBQRuaJt4gI9myY&query=Cairo%2C%20Egypt&checkin=2020-08-01&checkout=2020-08-08&adults=1&locale=en&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4"
-new_delhi = "https://www.airbnb.com/s/New-Delhi--Delhi--India/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&source=structured_search_input_header&search_type=search_query&place_id=ChIJLbZ-NFv9DDkRzk0gTkm3wlI&query=New%20Delhi%2C%20Delhi&checkin=2020-08-01&checkout=2020-08-08&adults=1&locale=en&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4"
-abuja = "https://www.airbnb.com/s/Abuja--Nigeria/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&source=structured_search_input_header&search_type=search_query&place_id=ChIJqe0-zldhThAR_C3jizYcrzI&query=Abuja%2C%20Nigeria&checkin=2020-08-01&checkout=2020-08-08&adults=1&locale=en&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4"
-amman = "https://www.airbnb.com/s/Amman--Jordani%C3%AB/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&source=structured_search_input_header&search_type=search_query&place_id=ChIJr4F5XbhfGxUR6GXc-MAwHGM&query=Amman%2C%20Jordani%C3%AB&checkin=2020-08-01&checkout=2020-08-08&adults=1&locale=en&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4"
-brussels = "https://www.airbnb.com/s/Brussels--Belgium/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&source=structured_search_input_header&search_type=search_query&place_id=ChIJZ2jHc-2kw0cRpwJzeGY6i8E&query=Brussels%2C%20Belgium&checkin=2020-08-01&checkout=2020-08-08&adults=1&locale=en&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4"
-krakau = "https://www.airbnb.com/s/Krakau--Polen/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&source=structured_search_input_header&search_type=search_query&place_id=ChIJ0RhONcBEFkcRv4pHdrW2a7Q&query=Krakau%2C%20Polen&checkin=2020-08-01&checkout=2020-08-08&adults=1&locale=en&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4"
-rome = "https://www.airbnb.com/s/Rome--Itali%C3%AB/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&source=structured_search_input_header&search_type=search_query&place_id=ChIJu46S-ZZhLxMROG5lkwZ3D7k&query=Rome%2C%20Itali%C3%AB&checkin=2020-08-01&checkout=2020-08-08&adults=1&locale=en&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4"
-montreal = "https://www.airbnb.com/s/Montreal--Qu%C3%A9bec--Canada/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&source=structured_search_input_header&search_type=search_query&place_id=ChIJDbdkHFQayUwR7-8fITgxTmU&query=Montreal%2C%20Qu%C3%A9bec&checkin=2020-08-01&checkout=2020-08-08&adults=1&locale=en&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4"
-sanfrancisco = "https://www.airbnb.com/s/San-Francisco--Californi%C3%AB--Verenigde-Staten/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&source=structured_search_input_header&search_type=search_query&place_id=ChIJIQBpAG2ahYAR_6128GcTUEo&query=San%20Francisco%2C%20Californi%C3%AB&checkin=2020-08-01&checkout=2020-08-08&adults=1&locale=en&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4"
-charlotte = "https://www.airbnb.com/s/Charlotte--NC--United-States/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&source=structured_search_input_header&search_type=search_query&place_id=ChIJgRo4_MQfVIgRZNFDv-ZQRog&query=Charlotte%2C%20NC&checkin=2020-08-01&checkout=2020-08-08&adults=1&locale=en&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4"
-mexicostad = "https://www.airbnb.com/s/Mexico~Stad--Mexico/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&source=structured_search_input_header&search_type=search_query&place_id=ChIJB3UJ2yYAzoURQeheJnYQBlQ&query=Mexico-Stad%2C%20Mexico&checkin=2020-08-01&checkout=2020-08-08&adults=1&locale=en&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4"
-sanjose = "https://www.airbnb.com/s/San-Jose--Costa-Rica/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&source=structured_search_input_header&search_type=search_query&place_id=ChIJxRUNxULjoI8RNuhDZCmsjv8&query=San%20Jose%2C%20Costa%20Rica&checkin=2020-08-01&checkout=2020-08-08&adults=1&locale=en&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4"
-buenosaires = "https://www.airbnb.com/s/Buenos-Aires--Argentini%C3%AB/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&source=structured_search_input_header&search_type=search_query&place_id=ChIJ2YFSWbe87ZURRKHw3PwJ00o&query=Buenos%20Aires%2C%20Argentini%C3%AB&checkin=2020-08-01&checkout=2020-08-08&adults=1&locale=en&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4"
-rio = "https://www.airbnb.com/s/Rio-de-Janeiro--Brazili%C3%AB/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&source=structured_search_input_header&search_type=search_query&place_id=ChIJw4riypQYmAAR0IMFwRrDSQM&query=Rio%20de%20Janeiro%2C%20Brazili%C3%AB&checkin=2020-08-01&checkout=2020-08-08&adults=1&locale=en&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4"
-santiago = "https://www.airbnb.com/s/Santiago--Chili/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&source=structured_search_input_header&search_type=search_query&place_id=ChIJuzrymgbQYpYRl0jtCfRZnYc&query=Santiago%2C%20Chili&checkin=2020-08-01&checkout=2020-08-08&adults=1&locale=en&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4"
-london = "https://www.airbnb.com/s/London--Verenigd-Koninkrijk/homes?tab_id=all_tab&refinement_paths%5B%5D=%2Fhomes&query=London%2C%20Verenigd%20Koninkrijk&place_id=ChIJdd4hrwug2EcRmSrV3Vo6llI&checkin=2020-08-01&checkout=2020-08-08&adults=1&source=structured_search_input_header&search_type=search_query&locale=en&_set_bev_on_new_domain=1592849383_ZmI4NzE3ZDMyMWU4"
-
+rutland = "https://www.airbnb.com/s/Rutland--VT/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&flexible_date_search_filter_type=2&adults=2&source=structured_search_input_header&checkin=2021-02-12&checkout=2021-02-15&search_type=search_query"
 
 """
     Setting up your environment
@@ -83,7 +57,7 @@ def getListingTitle(listing):
 
 def getTopRow(listing):
     ''' Returns the top row of listing information'''
-    return listing.find("div", {"class": "_167qordg"}).text
+    return listing.find("div", {"class": "_1tanv1h"}).text
 
 def getRoomInfo(listing):
     ''' Returns the guest information'''
@@ -99,7 +73,7 @@ def getBasicFacilities(listing):
 
 def getListingPrice(listing):
     ''' Returns the price'''
-    return listing.find("div", {"class":"_1fwiw8gv"}).text
+    return listing.find("div", {"class":"_1bbeetd"}).text
 
 def getListingRating(listing):
     ''' Returns the rating '''
@@ -136,7 +110,7 @@ def extractInformation(soupPage):
 def findNextPage(soupPage):
     ''' Finds the next page with listings if it exists '''
     try:
-		nextpage = "https://airbnb.com" + soupPage.find("a", class_="_za9j7e")["href"]
+        nextpage = "https://airbnb.com" + soupPage.find("a", class_="_za9j7e")["href"]
     except:
         nextpage = "no next page"
     return nextpage
@@ -166,29 +140,7 @@ def extractPages(url):
     Scraping all listings for a collection of cities
 '''
 
-urls = [["New York", newyork],
-         ["Tokyo", tokyo],
-         ["Beijing", beijing],
-         ["Seoul", seoul],
-         ["Bangkok", bangkok],
-         ["Sydney", sydney],
-         ["Auckland", auckland],
-         ["Kinshasa", kinshasa],
-         ["Cape Town", cape_town],
-         ["Cairo", cairo],
-         ["New Delhi", new_delhi],
-         ["Amman", amman],
-         ["Brussels", brussels],
-         ["Krakau", krakau],
-         ["Rome", rome],
-         ["Montreal", montreal],
-         ["San Francisco", sanfrancisco],
-         ["Charlotte", charlotte],
-         ["Mexico City", mexicostad],
-         ["San Jose (Costa Rica)", sanjose],
-         ["Rio de Janeiro", rio],
-         ["Santiago", santiago],
-         ["London", london]
+urls = [["Rutland", rutland]
          ]
 
 
@@ -465,19 +417,13 @@ def scraper(urls, sample_size = None, random_state = 1234):
     df.loc[:, 'reviews'] = df.details_page.apply(lambda x: getReviews(BeautifulSoup(x, features = "lxml")))
     df.loc[:, 'response_info'] = df.details_page.apply(lambda x: getResponseInfo(BeautifulSoup(x, features = "lxml")))
     df.loc[:, "amenities"] = df.amenities_page.apply(lambda x: getAmenities(BeautifulSoup(x, features = "lxml")))
-    df = cleanReviews(df)
-    df = cleanResponseInfo(df)
-    df = cleanAmenities(df)
+    # df = cleanReviews(df)
+    # df = cleanResponseInfo(df)
+    # df = cleanAmenities(df)
     return df
 
 
 '''
-    Running te scraper on New York and Tokyo and outputting a sample of 10 observations
+    Running te scraper
 '''
-urls2 = [["New York", newyork],
-         ["Tokyo", tokyo]]
-#df = scraper(urls2, sample_size = 10)
-        
-
-
-del abuja, amman, auckland, bangkok, beijing, brussels, buenosaires, cairo, cape_town, charlotte, kinshasa, krakau, london, manila, mexicostad, montreal, new_delhi, newyork, rio, rome, sanfrancisco, sanjose, santiago, seoul, sydney, tokyo, urls, first, scraped, urls2
+df = scraper(urls, sample_size = 10)
